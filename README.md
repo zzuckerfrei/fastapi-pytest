@@ -34,6 +34,6 @@ pytest
 ```
 or
 ```
-pytest test_async.py
+pytest test_main.py
 pytest test_async.py
 ```

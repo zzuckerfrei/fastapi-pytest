@@ -33,3 +33,11 @@ async def create_player(player: Player):
 
     fake_db[player.id] = player
     return player
+
+
+@app.put("/players/update/", response_model=Player)
+async def update_player(player: Player):
+    if player.id not in fake_db:
+        raise HTTPException(status_code=400, detail="player already exists")
+    fake_db[player.id] = player
+    return player
